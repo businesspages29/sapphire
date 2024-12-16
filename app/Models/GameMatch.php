@@ -8,6 +8,7 @@ class GameMatch extends Model
 {
     protected $fillable = [
         'id',
+        'completed_round',
     ];
 
     public function teams()

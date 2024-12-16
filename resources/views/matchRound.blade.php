@@ -13,12 +13,14 @@
                 <li class="list-group-item">{{ $team->name }}</li>
             @endforeach
         </ul>
-        <h5>{{ __('Lose') }}</h5>
-        <ul class="list-group">
-            @foreach ($data['loserTeams'] as $team)
-                <li class="list-group-item">{{ $team->name }}</li>
-            @endforeach
-        </ul>
+        @if ($data['winnerTeams']->count() != 0)
+            <h5>{{ __('Wild Card') }}</h5>
+            <ul class="list-group">
+                @foreach ($data['wildcardTeams'] as $item)
+                    <li class="list-group-item">{{ $item->name }}</li>
+                @endforeach
+            </ul>
+        @endif
         <div class="mt-3">
             <p>{{ __('Round ' . (request('round') + 1)) }}</p>
             <a class="btn btn-primary"

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('game_matches', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('completed_round')->default(0);
             $table->timestamps();
         });
     }
